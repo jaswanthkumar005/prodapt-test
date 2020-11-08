@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10" *ngIf="userData">
+      <div class="form-group col-md-4 mt-2">
+
+        <button class="btn btn-primary" routerLink="/create">Add Employee</button>
+      </div>
+
+
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-highlight" style="text-align:center;">
+    <thead>
+	<tr >
+  <th>S.NO</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Email</th>
+	<th>Actions</th>
+	</tr>
+	</thead>
+
+  <tbody id="datapoint" >
+    <tr  *ngFor="let user of userData; index as i">
+    <td>{{i+1}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+    <td><button class="btn btn-success"  [routerLink]="['/edit',user.id]" id ="btn_{{i+1}}" >UPDATE</button>&nbsp;<button class="btn btn-danger" data-value="btn_{{i+1}}" (click)="onDelete(user.id)" >DELETE</button> </td>
+
+    </tr>
+
+	</tbody>
+
+     </table>
+  </div>
+
+    </div>
+  </div>
+
+</div>

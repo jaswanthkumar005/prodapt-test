@@ -1,0 +1,6 @@
+:host {
+  background-color: brown;
+}
+:host(.active) {
+  border-width: 3px;
+}
